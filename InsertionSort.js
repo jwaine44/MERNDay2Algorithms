@@ -43,13 +43,12 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @param {Array<number>} nums
  * @returns {Array<number>} The given array after being sorted.
  */
- function insertionSort(nums) {
+function insertionSort(nums) {
     for(let i = 1; i < nums.length; i++){
-        let currentindex = i;
         //as long as the value to the left of the current value is greater than it, then swap and move to the left
-        while(nums[currentindex-1]>nums[currentindex]){
-            [nums[currentindex],nums[currentindex-1]]=[nums[currentindex-1],nums[currentindex]]; 
-            currentindex--;
+        while(nums[i - 1] > nums[i]){
+            [nums[i], nums[i - 1]] = [nums[i - 1], nums[i]]; 
+            i--;
         }
     }
     return nums;
